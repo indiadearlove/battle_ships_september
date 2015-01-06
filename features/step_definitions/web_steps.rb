@@ -16,6 +16,12 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
+class Greeter
+  def greet
+    "Hello James!"
+  end
+end
+
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
@@ -218,9 +224,21 @@ Then /^show me the page$/ do
   save_and_open_page
 end
 
-Then(/^I should be able to input "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+
+Given(/^I am ready to register$/) do
+  visit "/"
+  click_link "New Game"
 end
+
+When(/^I input James$/) do
+  fill_in "name", :with => "James"
+  click_button "submit"
+end
+
+Then(/^I should get "(.*?)"$/) do |arg1|
+  expect(page).to have_content "Hello, James!"
+end
+
 
 
 
