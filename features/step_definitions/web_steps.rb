@@ -239,6 +239,14 @@ Then(/^I should get "(.*?)"$/) do |arg1|
   expect(page).to have_content "Hello, James!"
 end
 
+When(/^nothing is inputted$/) do
+  click_button "submit"
+end
+
+Then(/^it should read "(.*?)"$/) do |arg1|
+  expect(page).to have_content "Please enter a name"
+end
+
 
 
 

@@ -13,3 +13,8 @@ Feature: Starting the game
 		Given I am ready to register
 		When I input James
 		Then I should get "Hello, James!"
+
+	Scenario: Not entering name
+		Given I am ready to register
+		When nothing is inputted
+		Then it should read "Please enter a name"
