@@ -6,7 +6,7 @@ class BattleShips < Sinatra::Base
   end
 
   get'/new_game' do
-    # "What's your name?"
+    @visitor = params[:name]
     erb :new_game
   end
 
