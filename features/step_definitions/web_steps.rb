@@ -247,6 +247,16 @@ Then(/^it should read "(.*?)"$/) do |arg1|
   expect(page).to have_content "Please enter a name"
 end
 
+Given(/^I am ready to register and player one is entered$/) do
+  visit '/'
+  click_link "New Game"
+  fill_in "name", :with => "James"
+  click_button "submit"
+end
 
+When(/^I input Tom$/) do
+  fill_in "name2", :with => "Tom"
+  click_button "submit"
+end
 
 

@@ -1,0 +1,16 @@
+<div> 
+  <form action= "/player2">
+    <% if @visitor == "" %> 
+      <p>Please enter another name</p>
+      What's your name?
+      <input type="text" name="name2">
+      <input type="submit" value="submit">
+    <% elsif @visitor %>
+      Hello, <%= @visitor %>!
+    <% else %>
+      What's Player 2's name?
+      <input type="text" name="name2">
+      <input type="submit" value="submit">
+    <% end %>
+  </form>
+</div>
