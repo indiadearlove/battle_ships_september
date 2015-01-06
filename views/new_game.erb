@@ -1,6 +1,11 @@
 <div>
   <form action="/new_game">
-    <% if @visitor %>  
+    <% if @visitor == "" %> 
+    	<p>Please enter a name</p>
+    	What's your name?
+	    <input type="text" name="name">
+	    <input type="submit" value="submit">
+    <% elsif @visitor %>
     	Hello, <%= @visitor %>!
   	<% else %>
 	    What's your name?
