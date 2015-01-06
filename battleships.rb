@@ -11,7 +11,7 @@ class BattleShips < Sinatra::Base
   end
 
   get'/player2' do
-    @visitor = params[:name2]
+    @visitor = params[:name]
     erb :player2
   end
 

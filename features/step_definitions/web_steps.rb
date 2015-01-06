@@ -252,11 +252,17 @@ Given(/^I am ready to register and player one is entered$/) do
   click_link "New Game"
   fill_in "name", :with => "James"
   click_button "submit"
+  click_link "Add Player 2"
 end
 
 When(/^I input Tom$/) do
-  fill_in "name2", :with => "Tom"
+  fill_in "name", :with => "Tom"
   click_button "submit"
 end
+
+Then(/^I should say "(.*?)"$/) do |arg1|
+  expect(page).to have_content "Hello, Tom! You are player 2"
+end
+
 
 

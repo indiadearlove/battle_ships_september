@@ -6,4 +6,4 @@ Feature: Starting the game
   Scenario: Registering Player 2
     Given I am ready to register and player one is entered
     When I input Tom
-    Then I should get "Hello, Tom! You are player 2"
+    Then I should say "Hello, Tom! You are player 2"
