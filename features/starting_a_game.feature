@@ -7,3 +7,10 @@ Feature: Starting the game
 		Given I am on the homepage
 		When I follow "New Game"
 		Then I should see "What's your name?"
+		Then I should be able to input "James"
+		Then I should see "Hello James"
+
+	# Scenario: Entering_name
+	# 	Given I am on new_game page
+	# 	When I input "James"
+	# 	Then I should see "Hello James"
