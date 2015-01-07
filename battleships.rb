@@ -22,7 +22,7 @@ class BattleShips < Sinatra::Base
 
   get '/placing_player2_ships' do
     @coord = params[:coord]
-    erb :placing_player1_ships
+    erb :placing_player2_ships
   end
 
   # start the server if ruby file executed directly

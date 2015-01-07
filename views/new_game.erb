@@ -1,17 +1,22 @@
-<div>
-  <form action="/new_game">
-    <% if @visitor == "" %> 
-    	<p>Please enter a name</p>
-    	What's your name?
-	    <input type="text" name="name">
-	    <input type="submit" value="submit">
-    <% elsif @visitor %>
-    	Hello, <%= @visitor %>!
-      <a href="player2">Add Player 2</a>
-  	<% else %>
-	    What's your name?
-	    <input type="text" name="name">
-	    <input type="submit" value="submit">
-	  <% end %>
-  </form>
-</div>
+<body style= "background-color: #80CCE6">
+  
+  <div style="width:50px; height:300px; background-color:#80CCE6"></div>
+
+  <div style= "font-size: 20px; font-family: helvetica; text-align: center">
+    <form action="/new_game">
+      <% if @visitor == "" %> 
+      	<p>Please enter a name</p>
+      	What's your name?
+  	    <input type="text" name="name">
+  	    <input type="submit" value="submit">
+      <% elsif @visitor %>
+      	Hello, <%= @visitor %>!
+        <a href="player2">Add Player 2</a>
+    	<% else %>
+  	    What's your name?
+  	    <input type="text" name="name">
+  	    <input type="submit" value="submit">
+  	  <% end %>
+    </form>
+  </div>
+</body>

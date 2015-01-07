@@ -1,15 +1,19 @@
-<div>
-	<h2>Player 2</h2> 
+<body style= "background-color: #80CCE6">
+  
+  <div style="width:50px; height:300px; background-color:#80CCE6"></div>
 
-  <form action= "/placing_player2_ships">
-      <% if @coord %>
-        Aircraft carrier placed
-      <% else %>
-        Place Aircraft Carrier
-        <input type="text" name="coord">
-        <input type="submit" value="vertical">
-        <input type="submit" value="horizontal">
-      <% end %>
-  </form>
+  <div style= "font-size: 20px; font-family: helvetica; text-align: center">
+  	<h2>Player 2</h2> 
 
-</div>
+    <form action= "/placing_player2_ships">
+        <% if @coord %>
+          Aircraft carrier placed
+        <% else %>
+          Place Aircraft Carrier
+          <input type="text" name="coord">
+          <input type="submit" value="vertical">
+          <input type="submit" value="horizontal">
+        <% end %>
+    </form>
+  </div>
+</body>
