@@ -7,3 +7,4 @@ Feature: Placing player 2's ships
     Given player 1 has placed their ships
     When I input coordinates B1 and click vertical
     Then I should see "Aircraft carrier placed"
+    Then I should see "Start firing"
