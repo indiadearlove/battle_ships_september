@@ -1,0 +1,19 @@
+<body style= "background-color: #80CCE6">
+  
+  <div style="width:50px; height:300px; background-color:#80CCE6"></div>
+
+  <div style= "font-size: 20px; font-family: helvetica; text-align: center">
+    <h2>Player 2 take a shot</h2> 
+
+    <form action= "/player2_fire">
+        <% if @coord %>
+          <p>Miss</p>
+          <a href="player1_fire">Player 1's turn</a>
+        <% else %>
+          Enter coordinate
+          <input type="text" name="coord">
+          <input type="submit" value="FIRE!">
+        <% end %>
+    </form>
+  </div>
+</body>

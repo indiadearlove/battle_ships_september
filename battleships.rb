@@ -30,6 +30,11 @@ class BattleShips < Sinatra::Base
     erb :player1_fire
   end
 
+  get '/player2_fire' do
+    @coord = params[:coord]
+    erb :player2_fire
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
