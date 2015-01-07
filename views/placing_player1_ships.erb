@@ -1,0 +1,15 @@
+<div>
+	<h2>Player 1</h2> 
+
+  <form action= "/placing_player1_ships">
+      <% if @coord %>
+        Aircraft carrier placed
+      <% else %>
+        Place Aircraft Carrier
+        <input type="text" name="coord">
+        <input type="submit" value="vertical">
+        <input type="submit" value="horizontal">
+      <% end %>
+  </form>
+
+</div>

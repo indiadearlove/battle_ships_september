@@ -15,8 +15,9 @@ class BattleShips < Sinatra::Base
     erb :player2
   end
 
-  get '/start_game' do
-    erb :start_game
+  get '/placing_player1_ships' do
+    @coord = params[:coord]
+    erb :placing_player1_ships
   end
 
   # start the server if ruby file executed directly

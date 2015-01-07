@@ -264,5 +264,21 @@ Then(/^I should say "(.*?)"$/) do |arg1|
   expect(page).to have_content "Hello, Tom! You are player 2"
 end
 
+Given(/^I am ready to start the game$/) do
+  visit '/'
+  click_link "New Game"
+  fill_in "name", :with => "James"
+  click_button "submit"
+  click_link "Add Player 2"
+  fill_in "name", :with => "Tom"
+  click_button "submit"
+  click_link "Start Game"
+end
+
+When(/^I input coordinates A(\d+) and click vertical$/) do |arg1|
+  fill_in "coord", :with => "A1"
+  click_button "vertical"
+end
+
 
 
