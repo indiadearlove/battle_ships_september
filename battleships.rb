@@ -1,12 +1,29 @@
 require 'sinatra/base'
+require_relative 'lib/board'
+require_relative 'lib/ship'
+require_relative 'lib/water'
+require_relative 'lib/cell'
+require_relative 'lib/game'
+require_relative 'lib/player'
 
 class BattleShips < Sinatra::Base
+
+  enable :sessions
+
   get '/' do
+    session[:game] = Game.new
     erb :index
   end
 
   get'/new_game' do
     @visitor = params[:name]
+    @game = session[:game]
+    if @visitor and @visitor != ""
+      player1 = Player.new
+      player1.name = params[:name]
+      player1.board = Board.new(Cell)
+      session[:game].add_player(player1)
+    end
     erb :new_game
   end
 
