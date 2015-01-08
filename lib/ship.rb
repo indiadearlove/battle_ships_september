@@ -20,23 +20,23 @@ class Ship
 	end
 
 	def self.aircraft_carrier
-		new 5
+		new 4 #Made all sizes 1 less so that it comes out with actual value
 	end
 
 	def self.battleship
-		new 4
+		new 3
 	end
 
 	def self.destroyer
-		new 3
+		new 2
 	end
 
 	def self.submarine
-		new 3
+		new 2
 	end
 
 	def self.patrol_boat
-		new 2 #changed this from 5
+		new 1 #changed this from 5
 	end
 
 end
