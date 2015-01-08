@@ -6,8 +6,8 @@ class Game
 		player1, player2 = nil, nil
 	end
 
-	def add_player(player)
-		self.player1 ? self.player2 = player : self.player1 = player unless has_two_players?
+	def add_players(player1, player2)
+		self.player1 ? self.player2 = player1 : self.player1 = player2 unless has_two_players?
 	end
 
 	def opponent
