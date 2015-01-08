@@ -28,13 +28,15 @@ class BattleShips < Sinatra::Base
   end
 
   get '/placing_player1_ships' do
+      erb :placing_player1_ships
+  end
 
+  post '/placing_player1_ships' do
     @game = session[:game]
     @coord = params[:coord]
     @orientation = params[:orientation]
     session[:game].player1.board.place(Ship.aircraft_carrier, params[:coord], params[:orientation])
-    puts player1.inspect
-    erb :placing_player1_ships
+    redirect '/placing_player1_ships'
   end
 
   get '/placing_player2_ships' do
@@ -55,3 +57,6 @@ class BattleShips < Sinatra::Base
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
+
+
+hello
