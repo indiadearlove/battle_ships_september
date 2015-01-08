@@ -236,7 +236,7 @@ When(/^I input James$/) do
 end
 
 Then(/^I should get "(.*?)"$/) do |arg1|
-  expect(page).to have_content "Hello, James!"
+  expect(page).to have_content "Player 1: James"
 end
 
 When(/^nothing is inputted$/) do
@@ -244,15 +244,14 @@ When(/^nothing is inputted$/) do
 end
 
 Then(/^it should read "(.*?)"$/) do |arg1|
-  expect(page).to have_content "Please enter a name"
+  expect(page).to have_content "What's your name?"
 end
 
-Given(/^I am ready to register and player one is entered$/) do
-  visit '/'
+Given(/^player (\d+) has registered$/) do |arg1|
+  visit "/"
   click_link "New Game"
   fill_in "name", :with => "James"
   click_button "submit"
-  click_link "Add Player 2"
 end
 
 When(/^I input Tom$/) do
@@ -260,19 +259,13 @@ When(/^I input Tom$/) do
   click_button "submit"
 end
 
-Then(/^I should say "(.*?)"$/) do |arg1|
-  expect(page).to have_content "Hello, Tom! You are player 2"
-end
 
 Given(/^I am ready to start the game$/) do
-  visit '/'
-  click_link "New Game"
-  fill_in "name", :with => "James"
+  step "player 1 has registered"
   click_button "submit"
-  click_link "Add Player 2"
   fill_in "name", :with => "Tom"
   click_button "submit"
-  click_link "Start Game"
+  click_link "Place Ships"
 end
 
 When(/^I input coordinates A(\d+) and click vertical$/) do |arg1|
@@ -281,14 +274,7 @@ When(/^I input coordinates A(\d+) and click vertical$/) do |arg1|
 end
 
 Given(/^player (\d+) has placed their ships$/) do |arg1|
-  visit '/'
-  click_link "New Game"
-  fill_in "name", :with => "James"
-  click_button "submit"
-  click_link "Add Player 2"
-  fill_in "name", :with => "Tom"
-  click_button "submit"
-  click_link "Start Game"
+  step "I am ready to start the game"
   fill_in "coord", :with => "A1"
   click_button "vertical"
   click_link "Place player 2 ships"
@@ -298,31 +284,6 @@ When(/^I input coordinates B(\d+) and click vertical$/) do |arg1|
    fill_in "coord", :with => "A1"
     click_button "vertical"
 end
-
-Given(/^I am ready to take my first shoot$/) do
-    visit '/'
-  click_link "New Game"
-  fill_in "name", :with => "James"
-  click_button "submit"
-  click_link "Add Player 2"
-  fill_in "name", :with => "Tom"
-  click_button "submit"
-  click_link "Start Game"
-  fill_in "coord", :with => "A1"
-  click_button "vertical"
-  click_link "Place player 2 ships"
-  fill_in "coord", :with => "A1"
-  click_button "vertical"
-  click_link "Start firing"
-end
-
-When(/^I input coordinates C(\d+) and click FIRE!$/) do |arg1|
-  fill_in "coord", :with => "C4"
-  click_button "FIRE!"
-end
-
-
-
 
 
 

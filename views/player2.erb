@@ -1,22 +1,17 @@
-<div>
-  Player1 Name: <%= session[:player1] %>
-  Player2 Name: <%= session[:player2] %>
-</div>
-
-  <div style= "font-size: 20px; font-family: helvetica; text-align: center">
-    <form action= "/player2">
-      <% if @visitor == "" %> 
-        <p>Please enter another name</p>
-        What's your name?
-        <input type="text" name="name">
-        <input type="submit" value="submit">
-      <% elsif @visitor %>
-        Hello, <%= @visitor %>! You are player 2
-        <a href="placing_player1_ships">Start Game</a> 
-      <% else %>
-        What's Player 2's name?
-        <input type="text" name="name">
-        <input type="submit" value="submit">
-      <% end %>
-    </form>
-  </div>
+<!-- <div style= "font-size: 20px; font-family: helvetica; text-align: center">
+  <form action= "/player2">
+    <% if @visitor == "" %> 
+      <p>Please enter another name</p>
+      What's your name?
+      <input type="text" name="name">
+      <input type="submit" value="submit">
+    <% elsif @visitor %>
+      Hello, <%= @visitor %>! You are player 2
+      <a href="placing_player1_ships">Start Game</a> 
+    <% else %>
+      What's Player 2's name?
+      <input type="text" name="name">
+      <input type="submit" value="submit">
+    <% end %>
+  </form>
+</div> -->

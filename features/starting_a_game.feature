@@ -9,12 +9,17 @@ Feature: Starting the game
 		Then I should see "What's your name?"
 		
 
-	Scenario: Registering
+	Scenario: Registering player 1
 		Given I am ready to register
 		When I input James
-		Then I should get "Hello, James!"
+		Then I should get "Player 1: James"
+
+	Scenario: Registering player 2
+		Given player 1 has registered
+		When I input Tom
+		Then I should get "Player 1: Tom"
 
 	Scenario: Not entering name
 		Given I am ready to register
 		When nothing is inputted
-		Then it should read "Please enter a name"
+		Then it should read "What's your name?"
