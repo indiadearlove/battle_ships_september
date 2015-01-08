@@ -33,15 +33,13 @@ class BattleShips < Sinatra::Base
   # end
 
   get '/placing_player1_ships' do
-      erb :placing_player1_ships
-  end
 
-  post '/placing_player1_ships' do
     @game = session[:game]
     @coord = params[:coord]
     @orientation = params[:orientation]
     session[:game].player1.board.place(Ship.aircraft_carrier, params[:coord], params[:orientation])
-    redirect '/placing_player1_ships'
+    puts player1.inspect
+    erb :placing_player1_ships
   end
 
   get '/placing_player2_ships' do
