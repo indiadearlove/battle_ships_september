@@ -33,9 +33,27 @@ class BattleShips < Sinatra::Base
 
   post '/placing_player1_ships' do
     @game = session[:game]
-    @coord = params[:coord]
-    @orientation = params[:orientation]
-    session[:game].player1.board.place(Ship.aircraft_carrier, params[:coord], params[:orientation])
+    
+    @coord_ac = params[:coord_ac].to_sym
+    @coord_bs = params[:coord_bs].to_sym
+    @coord_d = params[:coord_d].to_sym
+
+    @orientation_ac = params[:orientation_ac].to_sym
+    @orientation_bs = params[:orientation_bs].to_sym
+    @orientation_d = params[:orientation_d].to_sym
+
+
+    @placed_ac = session[:game].player1.board.place(Ship.aircraft_carrier, @coord_ac, @orientation_ac)
+    @placed_bs = session[:game].player1.board.place(Ship.battleship, @coord_bs, @orientation_bs)
+    @placed_d = session[:game].player1.board.place(Ship.destroyer, @coord_d, @orientation_d)
+    # @placed_s = session[:game].player1.board.place(Ship.submarine, @coord, @orientation)
+    # @placed_pb = session[:game].player1.board.place(Ship.patrol_boat, @coord, @orientation)
+    session[:game] = @placed_ac  #saving ac position to the session
+    session[:game] = @placed_bs
+    # session[:game] = @placed_d
+    # session[:game] = @placed_s
+    # session[:game] = @placed_pb
+    puts @game.inspect
     redirect '/placing_player1_ships'
   end
 

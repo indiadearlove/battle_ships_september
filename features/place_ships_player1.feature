@@ -8,3 +8,4 @@ Feature: Placing player 1's ships
     When I input coordinates A1 and select vertical
     Then I should see "Aircraft carrier placed"
     Then I should see "Place player 2 ships"
+    
