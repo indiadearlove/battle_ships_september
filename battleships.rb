@@ -27,11 +27,6 @@ class BattleShips < Sinatra::Base
     erb :new_game
   end
 
-  # get'/player2' do
-  #   @visitor = params[:name]
-  #   erb :player2
-  # end
-
   get '/placing_player1_ships' do
 
     @game = session[:game]
