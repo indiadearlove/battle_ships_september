@@ -59,4 +59,4 @@ class BattleShips < Sinatra::Base
 end
 
 
-hello
+hello there
