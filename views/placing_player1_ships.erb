@@ -1,18 +1,15 @@
-<!-- <div>
-  <p>Aircraft Carrier: <%= @game.player1.ships %></p>
-</div>
- -->
 
 <div style= "font-size: 20px; font-family: helvetica; text-align: center">
 	
   <h2>Player 1</h2> 
-  <form action= "/placing_player1_ships">
+  <form action="/placing_player1_ships" method="post">
     Place Aircraft Carrier
     <input type="text" name="coord">
     <select name="orientation">
       <option value="horizontally">Horizontally</option>
       <option value="vertically">Vertically</option>
     </select>
+    <br><input type="submit">
   </form>
 
 </div>
